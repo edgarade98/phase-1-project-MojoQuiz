@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         landingPageDiv.style.display = 'block';
     })
 })
+  
 
 const quiz = document.getElementById('quiz');
 const answerEls = document.querySelectorAll('.answer');
@@ -28,7 +29,7 @@ async function loadQuiz() {
     deselectAnswers();
     
     try {
-        const response = await fetch('https://opentdb.com/api.php?amount=13&difficulty=medium');
+        const response = await fetch('https://opentdb.com/api.php?amount=7&category=21&difficulty=easy&type=multiple');
         const data = await response.json();
         
         if (data.results.length > 0) {
@@ -64,8 +65,9 @@ submitBtn.addEventListener('click', () => {
     const answer = getSelected();
 
     if (answer) {
-        if (answer === 'd') {
+            if(answer === currentQuiz.correct_answer){
             score++;
+            }
         }
 
         currentQuiz++;
@@ -79,7 +81,7 @@ submitBtn.addEventListener('click', () => {
             `;
         }
     }
-});
+);
 
 // Initial quiz load
 loadQuiz();
