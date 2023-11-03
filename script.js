@@ -23,17 +23,19 @@ const submitBtn = document.getElementById('submit');
 
 let currentQuiz = 0;
 let score = 0;
+let quizData = []; // Store quiz data
 
 // Load quiz questions from the Open Trivia API
 async function loadQuiz() {
     deselectAnswers();
-    
+
     try {
-        const response = await fetch('https://opentdb.com/api.php?amount=7&category=21&difficulty=easy&type=multiple');
+        const response = await fetch('https://opentdb.com/api.php?amount=13&category=21&difficulty=easy&type=multiple');
         const data = await response.json();
-        
+
         if (data.results.length > 0) {
-            const currentQuizData = data.results[currentQuiz];
+            quizData = data.results;
+            const currentQuizData = quizData[currentQuiz];
             questionEl.innerHTML = currentQuizData.question;
             a_text.innerHTML = currentQuizData.incorrect_answers[0];
             b_text.innerHTML = currentQuizData.incorrect_answers[1];
@@ -65,23 +67,26 @@ submitBtn.addEventListener('click', () => {
     const answer = getSelected();
 
     if (answer) {
-            if(answer === currentQuiz.correct_answer){
+        if (answer === quizData[currentQuiz].correct_answer) {
             score++;
-            }
-        }
-
-        currentQuiz++;
-
-        if (currentQuiz < 13) {
-            loadQuiz();
-        } else {
-            quiz.innerHTML = `<h2>You answered ${score}/13 questions correctly</h2>
-            <br>
-            <button onclick="location.reload()">Reload</button>
-            `;
         }
     }
-);
 
-// Initial quiz load
+    currentQuiz++;
+
+    if (currentQuiz < quizData.length) {
+        loadQuiz();
+    } else {
+        quiz.innerHTML = `<div>
+        <div class="quiz-header">
+        <img src="logo1.png" alt="logo">
+        <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+        <br>
+        <button onclick="location.reload()"
+        style = "border-radius: 100px">Reload the Quiz</button>
+        </div>
+        </div>`;
+    }
+});
+
 loadQuiz();
