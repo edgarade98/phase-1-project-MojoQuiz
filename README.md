@@ -14,7 +14,7 @@ Follow these instructions to set up the project on your local machine:
 
 1. Clone the repository to your local machine:
 
-   git clone https://github.com/your-username/mojoquiz.git
+   git clone https://github.com/edgarade98/phase-1-project-MojoQuiz
 
 2.Navigate to the project directory:
 
