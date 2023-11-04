@@ -76,7 +76,8 @@ submitBtn.addEventListener('click', () => {
 
     if (currentQuiz < quizData.length) {
         loadQuiz();
-    } else {
+    } 
+    else {
         quiz.innerHTML = `<div>
         <div class="quiz-header">
         <img src="logo1.png" alt="logo">
