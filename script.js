@@ -36,6 +36,7 @@ async function loadQuiz() {
         if (data.results.length > 0) {
             quizData = data.results;
             const currentQuizData = quizData[currentQuiz];
+
             questionEl.innerHTML = currentQuizData.question;
             a_text.innerHTML = currentQuizData.incorrect_answers[0];
             b_text.innerHTML = currentQuizData.incorrect_answers[1];
@@ -45,6 +46,13 @@ async function loadQuiz() {
     } catch (error) {
         console.error(error);
     }
+
+const questionNumber = document.getElementById('question-number');
+const totalQuestions = document.getElementById('total-questions');
+
+questionNumber.innerText = currentQuiz + 1; 
+totalQuestions.innerText = quizData.length;
+
 }
 
 function deselectAnswers() {
