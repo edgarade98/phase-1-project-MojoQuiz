@@ -24,11 +24,12 @@ let currentQuiz = 0;
 let score = 0;
 let quizData = []; // Store quiz data
 
-// Load quiz questions from Open Trivia API
+// Load quiz questions from Open Trivia DB API
+
 async function loadQuiz() {
     deselectAnswers();
 
-    try {
+    try{
         const response = await fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple');
         const data = await response.json();
 
@@ -47,12 +48,14 @@ async function loadQuiz() {
     }
 
     // Progress Indicator for the quiz
+
     const questionNumber = document.getElementById('question-number');
     const totalQuestions = document.getElementById('total-questions');
 
     questionNumber.innerText = currentQuiz + 1;
     totalQuestions.innerText = quizData.length;
 }
+
 
 function deselectAnswers() {
     answerEls.forEach(answerEl => answerEl.checked = false);
@@ -76,7 +79,9 @@ submitBtn.addEventListener('click', () => {
     const answer = getSelected();
 
     if (answer) {
-        // Compare the user's answer with the correct answer from the API
+
+        // Compare the user's answer with the correct answer from the Open Trivia
+
         if (answer === quizData[currentQuiz].correct_answer) {
             score++;
         }
@@ -85,12 +90,13 @@ submitBtn.addEventListener('click', () => {
 
     if (currentQuiz < quizData.length) {
         loadQuiz();
-    } else {
+    } 
+    else {
         displayQuizResults();
     }
 });
 
-//Displays the user's results after answering
+//Displays the user's results after answering all questions
 
 function displayQuizResults() {
     quiz.innerHTML = `<div>
