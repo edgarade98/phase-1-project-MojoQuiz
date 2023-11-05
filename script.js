@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
         landingPageDiv.style.display = 'block';
     })
 })
-  
 
 const quiz = document.getElementById('quiz');
 const answerEls = document.querySelectorAll('.answer');
@@ -25,12 +24,12 @@ let currentQuiz = 0;
 let score = 0;
 let quizData = []; // Store quiz data
 
-// Load quiz questions from the Open Trivia API
+// Load quiz questions from Open Trivia API
 async function loadQuiz() {
     deselectAnswers();
 
     try {
-        const response = await fetch('https://opentdb.com/api.php?amount=13&category=21&difficulty=easy&type=multiple');
+        const response = await fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple');
         const data = await response.json();
 
         if (data.results.length > 0) {
@@ -47,12 +46,12 @@ async function loadQuiz() {
         console.error(error);
     }
 
-const questionNumber = document.getElementById('question-number');
-const totalQuestions = document.getElementById('total-questions');
+    // Progress Indicator for the quiz
+    const questionNumber = document.getElementById('question-number');
+    const totalQuestions = document.getElementById('total-questions');
 
-questionNumber.innerText = currentQuiz + 1; 
-totalQuestions.innerText = quizData.length;
-
+    questionNumber.innerText = currentQuiz + 1;
+    totalQuestions.innerText = quizData.length;
 }
 
 function deselectAnswers() {
@@ -71,31 +70,36 @@ function getSelected() {
     return answer;
 }
 
+//Checking the user's answer
+
 submitBtn.addEventListener('click', () => {
     const answer = getSelected();
 
     if (answer) {
+        // Compare the user's answer with the correct answer from the API
         if (answer === quizData[currentQuiz].correct_answer) {
             score++;
         }
     }
-
     currentQuiz++;
 
     if (currentQuiz < quizData.length) {
         loadQuiz();
-    } 
-    else {
-        quiz.innerHTML = `<div>
-        <div class="quiz-header">
-        <img src="logo1.png" alt="logo">
-        <h2>You answered ${score}/${quizData.length} questions correctly</h2>
-        <br>
-        <button onclick="location.reload()"
-        style = "border-radius: 100px">Reload the Quiz</button>
-        </div>
-        </div>`;
+    } else {
+        displayQuizResults();
     }
 });
 
+//Displays the user's results after answering
+
+function displayQuizResults() {
+    quiz.innerHTML = `<div>
+        <div class="quiz-header">
+            <img src="logo1.png" alt="logo">
+            <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+            <br>
+        </div>
+        <button onclick="location.reload()"><b>Reload the Quiz</b></button>
+    </div>`;
+}
 loadQuiz();

@@ -18,11 +18,11 @@ Follow these instructions to set up the project on your local machine:
 
 2.Navigate to the project directory:
 
-cd mojoquiz
+cd phase-1-project-MojoQuiz
 
 ## Open the index.html file in your web browser to start the quiz:
 
-/path/to/mojoquiz/index.html
+open index.html
 
 ## Link to live site on GitHub Pages 
 
