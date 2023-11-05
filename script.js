@@ -103,7 +103,7 @@ function displayQuizResults() {
         <div class="quiz-header">
             <img src="logo1.png" alt="logo">
             <h2>You answered ${score}/${quizData.length} questions correctly</h2>
-            <br>
+        
         </div>
         <button onclick="location.reload()"><b>Reload the Quiz</b></button>
     </div>`;
