@@ -26,6 +26,8 @@ open index.html
 
 ## Link to live site on GitHub Pages 
 
+https://edgarade98.github.io/phase-1-project-MojoQuiz/
+
 ## Copyright and License
 
 © 2023 MojoQuiz

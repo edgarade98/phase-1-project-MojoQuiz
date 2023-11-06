@@ -43,8 +43,9 @@ async function loadQuiz() {
             c_text.innerHTML = currentQuizData.incorrect_answers[2];
             d_text.innerHTML = currentQuizData.correct_answer;
         }
-    } catch (error) {
-        console.error(error);
+    } 
+    catch (error) {
+        console.error("Error fetching quiz data:", error);
     }
 
     // Progress Indicator for the quiz
@@ -94,17 +95,17 @@ submitBtn.addEventListener('click', () => {
     else {
         displayQuizResults();
     }
+
 });
 
 //Displays the user's results after answering all questions
 
 function displayQuizResults() {
-    quiz.innerHTML = `<div>
-        <div class="quiz-header">
-            <img src="logo1.png" alt="logo">
-            <h2>You answered ${score}/${quizData.length} questions correctly</h2>
-        
-        </div>
+    quiz.innerHTML = `<div class="quiz-header">
+    <img src="logo1.png" alt="logo">
+    <h2 id="score">Your Score: ${score}</h2>
+    </div>
+    </div>
         <button onclick="location.reload()"><b>Reload the Quiz</b></button>
     </div>`;
 }
