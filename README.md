@@ -8,7 +8,15 @@ Author: Edgar Otieno
 
 ## Description
 
-MojoQuiz is a fun and interactive quiz program that tests your knowledge on various topics. It offers a wide range of questions and challenges, making it an entertaining way to learn and have fun.
+MojoQuiz is a fun and interactive quiz program that tests your knowledge on various topics. It offers a wide range of questions and challenges, making it an entertaining way to learn and have fun. This program uses a public API to fetch trivia questions.
+
+## MojoQuiz App MVP
+
+1. MojoQuiz will use a public API called Open Trivia, which is a popular API and offers wide range of trivia questions.
+2. It displays diverse questions and answer choice to the user and allows them to select their preferred answers.
+3. At the end, MojoQuiz will provide feedback on how many questions were answered correctly out of the number of questions ,     displaying the score at the end of the quiz.
+4. It has basic styling and a user-friendly interface.
+5. MojoQuiz also has the option of retrying the quiz if at all the user is not satisfied with his/her results. This might also refresh the kind of questions displayed.
 
 ## Project Setup Instructions
 
