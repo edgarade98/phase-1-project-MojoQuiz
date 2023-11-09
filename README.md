@@ -34,11 +34,11 @@ https://edgarade98.github.io/phase-1-project-MojoQuiz/
 
 Here are some screenshots of the MojoQuiz application in action:
 
-![MojoQuiz Logo](./images/Landing.png)
+![MojoQuiz Landing Page](./Images/Landing.png)
 
-![MojoQuiz Logo](./images/Quizzes.png)
+![MojoQuiz Quizzes Page](./Images/Quizzes.png)
 
-![MojoQuiz Logo](./images/Scores.png)
+![MojoQuiz Scores Page](./Images/Scores.png)
 
 
 ## Copyright and License
