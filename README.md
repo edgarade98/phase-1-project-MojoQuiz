@@ -30,7 +30,7 @@ open index.html
 
 https://edgarade98.github.io/phase-1-project-MojoQuiz/
 
-## Screenshots
+## Screenshots of MojoQuiz
 
 Here are some screenshots of the MojoQuiz application in action:
 
