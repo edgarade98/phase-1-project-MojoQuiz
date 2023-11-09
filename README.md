@@ -4,6 +4,8 @@ This is my README file! Welcome to MojoQuiz!
 
 Author: Edgar Otieno
 
+![MojoQuiz Logo](logo1.png)
+
 ## Description
 
 MojoQuiz is a fun and interactive quiz program that tests your knowledge on various topics. It offers a wide range of questions and challenges, making it an entertaining way to learn and have fun.
@@ -27,6 +29,17 @@ open index.html
 ## Link to live site on GitHub Pages 
 
 https://edgarade98.github.io/phase-1-project-MojoQuiz/
+
+## Screenshots
+
+Here are some screenshots of the MojoQuiz application in action:
+
+![MojoQuiz Logo](./images/Landing.png)
+
+![MojoQuiz Logo](./images/Quizzes.png)
+
+![MojoQuiz Logo](./images/Scores.png)
+
 
 ## Copyright and License
 
